@@ -54,10 +54,15 @@ typedef enum {
   BTAV_A2DP_CODEC_INDEX_SOURCE_APTX,
   BTAV_A2DP_CODEC_INDEX_SOURCE_APTX_HD,
   BTAV_A2DP_CODEC_INDEX_SOURCE_LDAC,
-
   BTAV_A2DP_CODEC_INDEX_SOURCE_MAX,
+  BTAV_A2DP_CODEC_INDEX_SOURCE_APTX_ADAPTIVE =
+                                 BTAV_A2DP_CODEC_INDEX_SOURCE_MAX,
+  BTAV_A2DP_CODEC_INDEX_SOURCE_APTX_TWS,
 
-  BTAV_A2DP_CODEC_INDEX_SINK_MIN = BTAV_A2DP_CODEC_INDEX_SOURCE_MAX,
+  BTAV_A2DP_QVA_CODEC_INDEX_SOURCE_MAX,
+
+  BTAV_A2DP_CODEC_INDEX_SINK_MIN =
+                             BTAV_A2DP_QVA_CODEC_INDEX_SOURCE_MAX,
 
   // Add an entry for each sink codec here
   BTAV_A2DP_CODEC_INDEX_SINK_SBC = BTAV_A2DP_CODEC_INDEX_SINK_MIN,
@@ -151,8 +156,14 @@ typedef struct {
       case BTAV_A2DP_CODEC_INDEX_SOURCE_APTX_HD:
         codec_name_str = "aptX HD";
         break;
+      case BTAV_A2DP_CODEC_INDEX_SOURCE_APTX_ADAPTIVE:
+        codec_name_str = "aptX Adaptive";
+        break;
       case BTAV_A2DP_CODEC_INDEX_SOURCE_LDAC:
         codec_name_str = "LDAC";
+        break;
+      case BTAV_A2DP_CODEC_INDEX_SOURCE_APTX_TWS:
+        codec_name_str = "aptX TWS";
         break;
       case BTAV_A2DP_CODEC_INDEX_SINK_SBC:
         codec_name_str = "SBC (Sink)";
